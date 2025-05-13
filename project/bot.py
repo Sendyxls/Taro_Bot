@@ -17,7 +17,8 @@ import asyncio
 
 # --- Настройки ---
 TELEGRAM_TOKEN = "7549107815:AAFnvC8Fe9FoSAHGBtdSgVpW8TrVzP6YDVY"
-GPT_API_KEY = "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"
+#новый ключ
+GPT_API_KEY = "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"
 client = OpenAI(api_key=GPT_API_KEY, base_url="https://openrouter.ai/api/v1")
 SHOP_ID = "1061384"
 PROVIDER_TOKEN = "381764678:TEST:116332"
