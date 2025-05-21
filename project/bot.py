@@ -17,13 +17,18 @@ import asyncio
 
 # --- Настройки ---
 TELEGRAM_TOKEN = "7549107815:AAFnvC8Fe9FoSAHGBtdSgVpW8TrVzP6YDVY"
-#новый ключ
-GPT_API_KEY = "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"
-client = OpenAI(api_key=GPT_API_KEY, base_url="https://openrouter.ai/api/v1")
+GPT_API_KEY = "sk-92818bfc91ba421d8a2f9bbcef4bf0d0"  # новый ключ DeepSeek
 SHOP_ID = "1061384"
 PROVIDER_TOKEN = "381764678:TEST:116332"
 CURRENCY = "RUB"
 
+# OpenAI через DeepSeek
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=GPT_API_KEY,
+    base_url="https://api.deepseek.com"  # корректный URL для DeepSeek
+)
 bot = Bot(token=TELEGRAM_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
@@ -75,7 +80,7 @@ def get_tarot_interpretation_llama(question, cards):
         full_prompt = f"{content}\n\nВопрос: {question}. Выпали карты: {', '.join(cards)}."
 
         response = client.chat.completions.create(
-            model="deepseek/deepseek-chat-v3-0324:free",  # или deepseek-chat
+            model="deepseek-chat",  # или deepseek-chat
             messages=[
                 {"role": "system", "content": "You are a helpful assistant"},
                 {"role": "user", "content": full_prompt},
