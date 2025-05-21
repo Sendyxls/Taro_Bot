@@ -14,7 +14,7 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 import asyncio
-
+#lol
 # --- Настройки ---
 TELEGRAM_TOKEN = "7549107815:AAFnvC8Fe9FoSAHGBtdSgVpW8TrVzP6YDVY"
 GPT_API_KEY = "sk-92818bfc91ba421d8a2f9bbcef4bf0d0"  # новый ключ DeepSeek
